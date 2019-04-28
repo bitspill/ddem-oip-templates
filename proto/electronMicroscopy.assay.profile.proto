@@ -1,0 +1,33 @@
+// parentType: assay
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+message electronMicroscopy {
+    // Name of the electron microscopy assay (can be used for legacy id )
+    string name = 1;
+
+    // description about the electron microscopy assay
+    string description = 2;
+
+    // samples used
+    repeated string samples = 3; // txids of record type samples
+
+    // protocols used
+    repeated string protocols = 4; // txids of record type protocols
+
+    // Executed by
+    repeated string executedBy = 5; // txids of record type profiles
+
+    // Datasets
+    repeated string data = 6; // txids of profiles of the data resultant of this assay
+
+    // List of accepted relationships
+    repeated string validRelationships = 16; // txid to records of type relationship
+
+    // Notes about the electron microscopy assay.
+    repeated string notes = 17;
+
+}

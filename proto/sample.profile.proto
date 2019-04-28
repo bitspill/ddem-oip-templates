@@ -1,0 +1,47 @@
+// parentType: profile
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+message sample {
+    // Sample's name
+    required string name = 1;
+
+    // Description of sample
+    required string description = 2;
+
+    // Date and time of collection
+    int64 dateTime = 3;
+
+    // txid of a location record where the sample was collected
+    string location = 4; // txids of location type
+
+    // type of sample: water, blood, soil... etc
+    string sampleType = 5;
+
+    // type of the environment: forest, desert, human body
+    string environmentType = 6;
+
+    // List of locations of long term storage: txid of institutions, labs, places or people (contact)
+    repeated string longTermStorage = 7; // txids of people institutions/labs/places/people
+
+    // List of people/labs/institutions that collected the sample
+    repeated string collectedBy = 8; // txids of people/lab/institution type
+
+    // List of protocols used to collect, store and transport the sample to long term storage
+    repeated string protocols = 9; // txids of protocol type
+
+    // List of links to the metadata of the sample in other repositories
+    repeated string links = 10; // txid of link type
+
+    // List of accepted relationships
+    repeated string validRelationships = 16; // txid to records of type relationship
+
+    // Notes about the sample, collection, transporatation and storage
+    repeated string notes = 17;
+
+    // legacy id for use of who publish the record
+    string legacyId = 18;
+}
