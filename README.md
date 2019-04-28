@@ -20,7 +20,7 @@ Type of records to store metadata of relationships between records of the type `
 
 This primitive record has the basic elements of a relationship: `name`, `description` of the relationship, `since` to indicate when the relationship started and two other fields: `parties` and `roles`.
 
-The field `parties` list all the profiles involved in the relationship. The `field `roles` is a list in the same order as `parties` with the `role` of each profile listed in `parties`.
+The field `parties` list all the profiles involved in the relationship. The field `roles` is a list in the same order as `parties` with the `role` of each profile listed in `parties`.
 
 We will talk more about relationships later.
 
