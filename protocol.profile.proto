@@ -1,0 +1,35 @@
+// parentType: profile
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+message protocol {
+    // Protocol's name
+    required string name = 1;
+
+    // Description of protocol
+    required string description = 2;
+
+    // Date and time of collection
+    int64 dateTime = 3;
+
+    // List of instructions of the protocol
+    repeated string steps = 4;
+
+    // List of people/labs/institutions that developed the protocol
+    repeated string developedBy = 5;
+
+    // List of links to the metadata of the protocol in other repositories
+    repeated string links = 6; // txid of link type
+
+    // List of accepted relationships
+    repeated string validRelationships = 16; // txid to records of type relationship
+
+    // Notes about the protocol.
+    repeated string notes = 17;
+
+    // local id for use of who publish the record
+    string legacyId = 18;
+}

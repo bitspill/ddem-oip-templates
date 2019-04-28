@@ -1,0 +1,42 @@
+// parentType: institution
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+message company {
+    // Name of the company
+    string name = 1;
+
+    // description of the company
+    string description = 2;
+
+    // date of birth
+    int64 dateOfBirth = 3;
+
+    // Place of birth
+    string placeOfBirth = 4; // txid of a record type location/address
+
+    // txid of a location record where the institution is present
+    repeated string actualLocation = 5; // txids of record type location/address
+    
+    // List of accepted relationships
+    repeated string validRelationships=16; // txid to records of type relationship
+
+    // Notes about the company.
+    repeated string notes = 17;
+
+    // List of keywords
+    repeated string keywords=18;
+
+    // List of links to websites
+    repeated string websites=19;
+
+    // List of links to contact
+    repeated string contact=20; // txid of records type contact
+
+    // List of links to other digital profiles
+    repeated string otherProfiles=21; // txid of records type link
+
+}

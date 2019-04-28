@@ -1,0 +1,30 @@
+// parentType: device
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+message microscope {
+    // Name of the microscope
+    string name = 1;
+
+    // description about the microscope
+    string description = 2;
+
+    // Serial number
+    string serial = 3;
+
+    // Manufacturer(s) that build the microscope
+    repeated string manufacturers = 4;
+
+    // Part list
+    repeated string parts = 5;
+
+    // List of accepted relationships
+    repeated string validRelationships = 16; // txid to records of type relationship
+
+    // Notes about the microscope.
+    repeated string notes = 17;
+
+}

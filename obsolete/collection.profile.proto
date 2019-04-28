@@ -1,0 +1,23 @@
+// parentType: profile
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+message collection {
+    // Name of the collection
+    string name = 1;
+
+    // description about the collection
+    string description = 2;
+
+    // List of profiles part of the collection
+    repeated string profiles = 3; // txid to records of type profile
+
+    // List of accepted relationships
+    repeated string validRelationships = 16; // txid to records of type relationship
+
+    // Notes about the device.
+    repeated string notes = 17;
+}

@@ -1,0 +1,41 @@
+// parentType: profile
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+message address {
+    // Name of the address
+    string name = 1;
+
+    // description about the address
+    string description = 2;
+
+    // Name of the street
+    string streetName = 3;
+    
+    // Number of the place
+    int64 placeNumber = 4;
+
+    // Name of the city
+    string city = 5;
+
+    // Name of the state or region
+    string stateOrRegion = 6;
+
+    // Name of the country
+    string country = 7;
+
+    // zip code
+    int64 zipCode = 8;
+
+    // List of accepted relationships
+    repeated string validRelationships = 16; // txid to records of type relationship
+
+    // Notes about the address.
+    repeated string notes = 17;
+
+    // POBox
+    int64 pobox = 18;
+}
