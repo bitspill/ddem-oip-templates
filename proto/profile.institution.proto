@@ -5,8 +5,10 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
+import "txid.proto";
+
 message institution {
-    // Name of the intitution
+    // Name of the institution
     string name = 1;
 
     // description of the institution
@@ -19,10 +21,10 @@ message institution {
     string placeOfBirth = 4; // txid of a record type location/address
 
     // txid of a location record where the institution is present
-    repeated string actualLocation = 5; // txids of record type location/address
+    repeated Txid actualLocation = 5; // txids of record type location/address
 
     // List of accepted relationships
-    repeated string validRelationships=16; // txid to records of type relationship
+    repeated Txid validRelationships=16; // txid to records of type relationship
 
     // Notes about the institution.
     repeated string notes = 17;
@@ -34,8 +36,8 @@ message institution {
     repeated string websites=19;
 
     // List of links to contact
-    repeated string contact=20; // txid of records type contact
+    repeated Txid contact=20; // txid of records type contact
 
     // List of links to other digital profiles
-    repeated string otherProfiles=21; // txid of records type link
+    repeated Txid otherProfiles=21; // txid of records type link
 }

@@ -5,6 +5,8 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
+import "txid.proto";
+
 message assay {
     // Name of the assay
     string name = 1;
@@ -13,19 +15,19 @@ message assay {
     string description = 2;
 
     // samples used
-    repeated string samples = 3; // txids of record type samples
+    repeated Txid samples = 3; // txids of record type samples
 
     // protocols used
-    repeated string protocols = 4; // txids of record type protocols
+    repeated Txid protocols = 4; // txids of record type protocols
 
     // Executed by
-    repeated string executedBy = 5; // txids of record type profiles
+    repeated Txid executedBy = 5; // txids of record type profiles
 
     // Datasets
-    repeated string data = 6; // txids of profiles of the data resultant of this assay
+    repeated Txid data = 6; // txids of profiles of the data resultant of this assay
 
     // List of accepted relationships
-    repeated string validRelationships = 16; // txid to records of type relationship
+    repeated Txid validRelationships = 16; // txid to records of type relationship
 
     // Notes about the assay.
     repeated string notes = 17;

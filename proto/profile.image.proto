@@ -5,6 +5,8 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
+import "txid.proto";
+
 message image {
     // Name of the image
     string name = 1;
@@ -19,7 +21,7 @@ message image {
     int64 date = 4;
 
     // List of accepted relationships
-    repeated string validRelationships = 16; // txid to records of type relationship
+    repeated Txid validRelationships = 16; // txid to records of type relationship
 
     // Notes about the image.
     repeated string notes = 17;

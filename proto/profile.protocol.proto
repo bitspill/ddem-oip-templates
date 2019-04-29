@@ -5,12 +5,14 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
+import "txid.proto";
+
 message protocol {
     // Protocol's name
-    required string name = 1;
+    string name = 1;
 
     // Description of protocol
-    required string description = 2;
+    string description = 2;
 
     // Date and time of collection
     int64 dateTime = 3;
@@ -19,13 +21,13 @@ message protocol {
     repeated string steps = 4;
 
     // List of people/labs/institutions that developed the protocol
-    repeated string developedBy = 5;
+    repeated Txid developedBy = 5;
 
     // List of links to the metadata of the protocol in other repositories
-    repeated string links = 6; // txid of link type
+    repeated Txid links = 6; // txid of link type
 
     // List of accepted relationships
-    repeated string validRelationships = 16; // txid to records of type relationship
+    repeated Txid validRelationships = 16; // txid to records of type relationship
 
     // Notes about the protocol.
     repeated string notes = 17;

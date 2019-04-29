@@ -5,6 +5,8 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
+import "txid.proto";
+
 message electronMicrograph {
     // Name of the electron micrograph (can be used to store legacy IDs)
     string name = 1;
@@ -28,7 +30,7 @@ message electronMicrograph {
     int64 defocus = 7;
 
     // List of accepted relationships
-    repeated string validRelationships = 16; // txid to records of type relationship
+    repeated Txid validRelationships = 16; // txid to records of type relationship
 
     // Notes about the electron micrograph.
     repeated string notes = 17;

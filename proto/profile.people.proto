@@ -5,6 +5,8 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
+import "txid.proto";
+
 message people {
     // Name of the person
     string name = 1;
@@ -28,10 +30,10 @@ message people {
     repeated string contact=20; // txid of records type contact
 
     // List of links to other digital profiles
-    repeated string otherProfiles=21; // txid of records type link
+    repeated Txid otherProfiles=21; // txid of records type link
 
     // List of accepted relationships
-    repeated string validRelationships=16; // txid to records of type relationship
+    repeated Txid validRelationships=16; // txid to records of type relationship
 
     // Notes about the person.
     repeated string notes = 17;

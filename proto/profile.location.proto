@@ -5,12 +5,14 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
+import "txid.proto";
+
 message location {
     // Name of the location
-    required string name = 1;
+    string name = 1;
 
     // Description of the location
-    required string description = 2;
+    string description = 2;
 
     // Address of the location
     string address = 3; // txid of type address
@@ -22,7 +24,7 @@ message location {
     string longitude = 5;
     
     // List of accepted relationships
-    repeated string validRelationships = 16; // txid to records of type relationship
+    repeated Txid validRelationships = 16; // txid to records of type relationship
 
     // Notes about the location.
     repeated string notes = 17;

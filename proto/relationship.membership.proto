@@ -5,6 +5,8 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
+import "txid.proto";
+
 message membership {
     // Name of membership
     string name = 1;
@@ -13,10 +15,10 @@ message membership {
     string description = 2;
 
     // List of parties involved
-    repeated string parties = 3; // txid to record of type profile
+    repeated Txid parties = 3; // txid to record of type profile
 
     // List of roles of the parties
-    repeated string roles = 4; // txid to record of type profile
+    repeated Txid roles = 4; // txid to record of type profile
 
     // member since
     string since = 5;

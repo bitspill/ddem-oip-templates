@@ -5,6 +5,8 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
+import "txid.proto";
+
 message permission {
     reserved 3, 4; // parties and roles are reserved
 
@@ -15,7 +17,7 @@ message permission {
     string description = 2;
 
     // profile of that owns the permission
-    string grantTo = 5;
+    Txid grantTo = 5;
 
     // Notes about the permission.
     repeated string notes = 16;

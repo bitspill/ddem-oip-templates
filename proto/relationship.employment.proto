@@ -5,22 +5,24 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
-message ownership {
-    // Name of ownership
+import "txid.proto";
+
+message employment {
+    // Name of employment
     string name = 1;
 
-    // description about the ownership
+    // description about the employment
     string description = 2;
 
     // List of parties involved
-    repeated string parties = 3; // txid to record of type profile
+    repeated Txid parties = 3; // txid to record of type profile
 
     // List of roles of the parties
-    repeated string roles = 4; // txid to record of type profile
+    repeated Txid roles = 4; // txid to record of type profile
 
     // member since
     string since = 5;
 
-    // Notes about the ownership.
+    // Notes about the employment.
     repeated string notes = 16;
 }

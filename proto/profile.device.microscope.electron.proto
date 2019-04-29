@@ -5,6 +5,8 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
+import "txid.proto";
+
 message electron {
     // Name of the profile
     string name = 1;
@@ -22,7 +24,7 @@ message electron {
     repeated string parts = 5;
 
     // List of accepted relationships
-    repeated string validRelationships = 16; // txid to records of type relationship
+    repeated Txid validRelationships = 16; // txid to records of type relationship
 
     // Notes about the microscope.
     repeated string notes = 17;

@@ -5,6 +5,8 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
+import "txid.proto";
+
 message address {
     // Name of the address
     string name = 1;
@@ -14,7 +16,7 @@ message address {
 
     // Name of the street
     string streetName = 3;
-    
+
     // Number of the place
     int64 placeNumber = 4;
 
@@ -31,7 +33,7 @@ message address {
     int64 zipCode = 8;
 
     // List of accepted relationships
-    repeated string validRelationships = 16; // txid to records of type relationship
+    repeated Txid validRelationships = 16; // txid to records of type relationship
 
     // Notes about the address.
     repeated string notes = 17;

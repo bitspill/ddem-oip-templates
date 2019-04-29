@@ -5,11 +5,13 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
-message company {
-    // Name of the company
+import "txid.proto";
+
+message laboratory {
+    // Name of the laboratory
     string name = 1;
 
-    // description of the company
+    // description of the laboratory
     string description = 2;
 
     // date of birth
@@ -19,12 +21,15 @@ message company {
     string placeOfBirth = 4; // txid of a record type location/address
 
     // txid of a location record where the institution is present
-    repeated string actualLocation = 5; // txids of record type location/address
-    
-    // List of accepted relationships
-    repeated string validRelationships=16; // txid to records of type relationship
+    repeated Txid actualLocation = 5; // txids of record type location/address
 
-    // Notes about the company.
+    // txid of the Principal Investigator(s)
+    repeated Txid pi = 6; // txid of record type people
+
+    // List of accepted relationships
+    repeated Txid validRelationships=16; // txid to records of type relationship
+
+    // Notes about the laboratory.
     repeated string notes = 17;
 
     // List of keywords
@@ -34,9 +39,9 @@ message company {
     repeated string websites=19;
 
     // List of links to contact
-    repeated string contact=20; // txid of records type contact
+    repeated Txid contact=20; // txid of records type contact
 
     // List of links to other digital profiles
-    repeated string otherProfiles=21; // txid of records type link
+    repeated Txid otherProfiles=21; // txid of records type link
 
 }

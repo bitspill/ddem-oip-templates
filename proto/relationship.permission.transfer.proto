@@ -5,7 +5,9 @@ package oip5.record.templates;
 
 option go_package = "oip5";
 
-message split {
+import "txid.proto";
+
+message transfer {
     reserved 3, 4; // parties and roles are reserved
 
     // Name of permission
@@ -14,14 +16,16 @@ message split {
     // description about the permission
     string description = 2;
 
-    // profile of that have permission to split the record
-    string grantTo = 5;
+    // profile of that have permission to transfer the record
+    Txid grantTo = 5;
 
     // txid of the record(s) scoped by the permission 
     // all grants this permission over all existing records
     // any is like all but to future records
     // txids will grant this permission over the records enumerated
-    repeated string record = 6;    
+    repeated Txid record = 6;
+    bool all = 7;
+    bool any = 8;
 
     // Notes about the permission.
     repeated string notes = 16;
