@@ -1,4 +1,4 @@
-// parentType: assay
+// requires: research
 syntax = "proto3";
 
 package oip5.record.templates;
@@ -7,12 +7,9 @@ option go_package = "oip5";
 
 import "txid.proto";
 
-message electronMicroscopy {
-    // Name of the electron microscopy assay (can be used for legacy id )
-    string name = 1;
-
-    // description about the electron microscopy assay
-    string description = 2;
+message assay {
+    // Date and time of collection
+    int64 dateTime = 2;
 
     // samples used
     repeated Txid samples = 3; // txids of record type samples
@@ -29,7 +26,7 @@ message electronMicroscopy {
     // List of accepted relationships
     repeated Txid validRelationships = 16; // txid to records of type relationship
 
-    // Notes about the electron microscopy assay.
+    // Notes about the assay.
     repeated string notes = 17;
 
 }

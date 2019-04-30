@@ -1,4 +1,3 @@
-// parentType: profile
 syntax = "proto3";
 
 package oip5.record.templates;
@@ -7,16 +6,7 @@ option go_package = "oip5";
 
 import "txid.proto";
 
-message protocol {
-    // Protocol's name
-    string name = 1;
-
-    // Description of protocol
-    string description = 2;
-
-    // Date and time of collection
-    int64 dateTime = 3;
-
+message researchProtocol {
     // List of instructions of the protocol
     repeated string steps = 4;
 
@@ -25,12 +15,6 @@ message protocol {
 
     // List of links to the metadata of the protocol in other repositories
     repeated Txid links = 6; // txid of link type
-
-    // List of accepted relationships
-    repeated Txid validRelationships = 16; // txid to records of type relationship
-
-    // Notes about the protocol.
-    repeated string notes = 17;
 
     // local id for use of who publish the record
     string legacyId = 18;

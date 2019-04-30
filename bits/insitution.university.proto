@@ -1,0 +1,12 @@
+// requires: institution
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+import "txid.proto";
+
+message university {
+    // unique stuff about universities
+}

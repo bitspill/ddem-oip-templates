@@ -1,0 +1,22 @@
+// requires: research
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+import "txid.proto";
+
+message researchProtocol {
+    // List of instructions of the protocol
+    repeated string steps = 4;
+
+    // List of people/labs/institutions that developed the protocol
+    repeated Txid developedBy = 5;
+
+    // List of links to the metadata of the protocol in other repositories
+    repeated Txid links = 6; // txid of link type
+
+    // local id for use of who publish the record
+    string legacyId = 18;
+}

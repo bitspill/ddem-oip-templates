@@ -1,0 +1,19 @@
+// requires: file
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+import "txid.proto";
+
+message image {
+    // Image width in px
+    uint64 width_px = 1;
+    // Image height_px
+    uint64 height_px = 2;
+    // Image PPI
+    uint64 ppi = 3;
+
+    // other EXIF style info
+}

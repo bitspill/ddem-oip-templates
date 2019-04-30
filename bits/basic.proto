@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+message basic {
+    // Record title
+    string title = 1;
+
+    // Record description
+    string description = 2;
+
+}

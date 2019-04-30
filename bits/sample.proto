@@ -1,4 +1,3 @@
-// parentType: profile
 syntax = "proto3";
 
 package oip5.record.templates;
@@ -8,12 +7,6 @@ option go_package = "oip5";
 import "txid.proto";
 
 message sample {
-    // Sample's name
-    string name = 1;
-
-    // Description of sample
-    string description = 2;
-
     // Date and time of collection
     int64 dateTime = 3;
 
@@ -38,10 +31,7 @@ message sample {
     // List of links to the metadata of the sample in other repositories
     repeated Txid links = 10; // txid of link type
 
-    // List of accepted relationships
-    repeated Txid validRelationships = 16; // txid to records of type relationship
-
-    // Notes about the sample, collection, transporatation and storage
+    // Notes about the sample, collection, transportation and storage
     repeated string notes = 17;
 
     // legacy id for use of who publish the record

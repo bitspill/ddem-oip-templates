@@ -1,0 +1,25 @@
+// requires: file.image, file (implicitly)
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+import "txid.proto";
+
+message electronMicrograph {
+    // txid of who took the electron micrograph
+    repeated Txid takenBy = 3;
+
+    // When it was taken
+    int64 date = 4;
+
+    // txid of the electron microscope used to take the micrograph
+    Txid takenWith = 5;
+
+    // Magnification
+    int64 magnification = 6;
+    
+    // Defocus
+    int64 defocus = 7;
+}

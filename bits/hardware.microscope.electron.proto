@@ -1,0 +1,16 @@
+// requires: hardware.microscope, hardware (implicit)
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+import "txid.proto";
+
+message electronMicroscope {
+    // only define fields unique to microscope
+    // not within `hardware.microscope` or `hardware`
+
+    uint64 electronCount = 1; // a yuge number
+
+}

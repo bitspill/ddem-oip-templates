@@ -1,0 +1,13 @@
+// requires: researchAssay, research (implicitly)
+syntax = "proto3";
+
+package oip5.record.templates;
+
+option go_package = "oip5";
+
+import "txid.proto";
+
+message electronMicroscopy {
+    // Fields unique to Electron Microscopy
+    // not within researchAssay
+}
